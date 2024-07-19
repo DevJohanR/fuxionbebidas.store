@@ -1,0 +1,256 @@
+.container {
+  height: calc(100vh - 100px);
+  background: url('../public/img/fondohero.jpg') no-repeat center center/cover;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Capa oscura con opacidad */
+  z-index: 1; /* Debajo del contenido pero encima de la imagen de fondo */
+}
+
+.wrapper {
+  width: 300vw;
+  height: 100%;
+  display: flex;
+  transition: all 1.5s ease-in-out;
+  position: relative; /* Para que el contenido se posicione correctamente sobre la capa oscura */
+  z-index: 2; /* Por encima de la capa oscura */
+}
+
+.imgContainer {
+  width: 100vw;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  position: absolute;
+  color: white;
+  text-align: center;
+  z-index: 3; /* Asegúrate de que el texto esté por encima de la capa oscura y el wrapper */
+  font-family: 'Roboto', sans-serif;
+}
+
+.content h1, .content h2, .content h3 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.content h2 {
+  font-size: 4rem;
+  margin: 10px 0;
+}
+
+.content h3 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.content button {
+  background-color: #54b437;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.content button:hover {
+  background-color: #46992d;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.featuresList li {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  background-color: rgba(31, 27, 27, 0.863);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.icon {
+  color: #54b437;
+  font-size: 1.5rem;
+}
+
+.faqSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.faqIcon {
+  color: #54b437;
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.faqSection h4 {
+  font-size: 1.5rem;
+  color: #54b437;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff5a5f;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+
+.videoContainer {
+  margin-top: 20px;
+}
+
+.content p {
+  font-size: 1rem;
+}
+
+.arrowContainer {
+  position: absolute;
+  width: 5%;
+  height: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 4; /* Asegúrate de que las flechas estén por encima de todo */
+}
+
+.arrowContainer img {
+  object-fit: contain;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    height: 50vh;
+  }
+
+  .content h1 {
+    font-size: 1.5rem;
+  }
+
+  .content h2 {
+    font-size: 2.5rem;
+  }
+
+  .content h3 {
+    font-size: 1.2rem;
+  }
+
+  .content button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .featuresList li {
+    font-size: 1rem;
+  }
+
+  .iconContainer {
+    width: 30px;
+    height: 30px;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
+
+  .faqIcon {
+    font-size: 1.5rem;
+  }
+
+  .faqSection h4 {
+    font-size: 1.2rem;
+  }
+
+  .content p {
+    font-size: 0.8rem;
+  }
+}
